@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 147</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: grey">
+      <a-camera
+        position="0 2.5 15"
+        rotation="-6.955707632888194 143.8175631979928 0"
+        id="camera"
+      ></a-camera>
+
+      <!-- Importing models -->
+      <a-assets>
+        <!-- bed -->
+        <a-asset-item id="bed-obj" src="./models/bed/bed.obj"></a-asset-item>
+        <a-asset-item id="bed-mtl" src="./models/bed/bed.mtl"></a-asset-item>
+
+        <!-- wardrobe -->
+        <a-asset-item
+          id="wordeobe-glb"
+          src="./models/wardrobe/wardrobe.glb"
+        ></a-asset-item>
+
+        <!-- desk -->
+        <a-asset-item
+          id="desk-glb"
+          src="./models/desk/table.glb"
+        ></a-asset-item>
+
+        <!-- door -->
+        <a-asset-item id="door-obj" src="./models/Door/Door.obj"></a-asset-item>
+        <a-asset-item id="door-mtl" src="./models/Door/Door.mtl"></a-asset-item>
+
+        <!-- plant -->
+        <a-asset-item
+          id="desk-plant"
+          src="./models/indoor plant/desk-plant.glb"
+        ></a-asset-item>
+
+        <a-asset-item
+          id="floor-plant"
+          src="./models/indoor plant/floor_plant.glb"
+        ></a-asset-item>
+
+        <a-asset-item
+          id="C_light"
+          src="./models/light/C_light.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- window -->
+      <a-box
+        position="7.24502 3.37357 4.14886"
+        src="img/background.png"
+        scale="5.03355 -0.13211 3.04479"
+        rotation="90 0 90"
+        id="window"
+        material=""
+        geometry=""
+      >
+      </a-box>
+
+      <a-sphere
+        src="img/rug.jpg"
+        position="-1.12814 0.02976 0"
+        scale="5.07664 0.19512 5.24868"
+        rotation=""
+        material=""
+        geometry=""
+        id="rug"
+      ></a-sphere>
+
+      <!-- model -->
+      <!-- bed -->
+      <a-entity id="models">
+        <a-entity
+          obj-model="obj: ./models/bed/bed.obj; mtl: ./models/bed/bed.mtl"
+          position="-4.04152 0.92904 -3.31605"
+          scale="0.03 0.03 0.02"
+          rotation="-90 0 90"
+          id="bed"
+        ></a-entity>
+
+        <a-entity
+          position="8.84967 2.43083 -3.84714"
+          gltf-model="./models/wardrobe/wardrobe.glb"
+          rotation="0 -90 0"
+          scale="10 10 10"
+          id="wardrobe"
+        ></a-entity>
+
+        <a-entity
+          position="6.82708 1.2714 4.45453"
+          gltf-model="./models/desk/table.glb"
+          rotation="0 -90 0"
+          scale="10 10 10"
+          id="desk"
+        ></a-entity>
+
+        <a-entity
+          position="-7.26414 -0.24556 3.49483"
+          obj-model="obj: ./models/Door/Door.obj; mtl: ./models/Door/Door.mtl"
+          rotation="0 90.43222063667835 0"
+          scale="0.32442 0.39282 0.39113"
+          id="door-1"
+        ></a-entity>
+
+        <a-entity
+          position="0.42066 -0.24556 -7.32443"
+          obj-model="obj: ./models/Door/Door.obj; mtl: ./models/Door/Door.mtl"
+          rotation=""
+          scale="0.32442 0.39282 0.39113"
+          id="door-2"
+        ></a-entity>
+
+        <a-entity
+          position="7.35828 2.76017 2.91421"
+          gltf-model="./models/indoor plant/desk-plant.glb"
+          rotation="0 -90 0"
+          scale="5.46621 4.67351 4.08001"
+          id="d_plant-1"
+        ></a-entity>
+
+        <a-entity
+          position="7.42668 2.76017 5.31191"
+          gltf-model="./models/indoor plant/desk-plant.glb"
+          rotation="0 -90 0"
+          scale="5.46621 4.67351 4.08001"
+          id="d_plant-2"
+        ></a-entity>
+
+        <a-entity
+          position="0 3.27841 0"
+          gltf-model="./models/light/C_light.glb"
+          rotation="0 -90 0"
+          scale="0.03 0.02 0.03"
+          id="C_light"
+        ></a-entity>
+      </a-entity>
+
+      <!-- plane & walls -->
+      <!-- plane -->
+      <a-plane
+        position="0 0 0"
+        scale="15.00 15.00 1"
+        rotation="-89.6913862075742 0 0"
+        src="img/floor.jpg"
+        id="floor"
+      ></a-plane>
+
+      <!-- walls -->
+      <a-entity id="walls_&amp;_pillers"
+        ><a-box
+          position="7.47197 2.96246 -0.02636"
+          color="white"
+          scale="0.2169 6.21811 15.05636"
+          rotation=""
+          material=""
+          geometry=""
+          id="wall-1"
+        ></a-box>
+
+        <a-box
+          position="-7.33579 3.04018 -0.02636"
+          color="white"
+          scale="-0.1491 6.05827 15.08598"
+          rotation=""
+          material=""
+          geometry=""
+          id="wall-2"
+        ></a-box>
+
+        <a-box
+          position="0.09204 2.96246 -7.45193"
+          color="white"
+          scale="0.2169 6.21811 14.92148"
+          rotation="0 90 0"
+          material=""
+          geometry=""
+          id="wall-3"
+        ></a-box>
+
+        <a-box
+          position="0.09207 5.94332 -0.03379"
+          color="white"
+          scale="0.2169 15.05401 14.8748"
+          rotation="0 90.00021045914971 90"
+          material=""
+          geometry=""
+          id="wall-4"
+        ></a-box>
+
+        <a-box
+          position="7.04313 2.90472 -6.91442"
+          color="#2c1200"
+          scale="0.43464 5.8604 0.44484"
+          rotation="180 90 180"
+          material=""
+          geometry=""
+          id="wall-5"
+        ></a-box
+        ><a-box
+          position="2.5854 2.90472 -6.91442"
+          color="#2c1200"
+          scale="0.43464 5.8604 0.44484"
+          rotation="180 90 180"
+          material=""
+          geometry=""
+          id="wall-6"
+        ></a-box
+        ><a-box
+          position="7.14539 2.90472 7.27278"
+          color="#2c1200"
+          scale="0.43464 5.8604 0.44484"
+          rotation="180 90 180"
+          material=""
+          geometry=""
+          id="wall-13"
+        ></a-box
+        ><a-box
+          position="-6.9964 2.90472 -6.91442"
+          color="#2c1200"
+          scale="0.43464 5.8604 0.49673"
+          rotation="180 90 180"
+          material=""
+          geometry=""
+          id="wall-7"
+        ></a-box
+        ><a-box
+          position="-7.04285 2.90472 7.26705"
+          color="#2c1200"
+          scale="0.43464 5.8604 0.44484"
+          rotation="180 90 180"
+          material=""
+          geometry=""
+          id="wall-12"
+        ></a-box
+        ><a-box
+          position="-2.09918 2.90472 -6.91442"
+          color="#2c1200"
+          scale="0.43464 5.8604 0.44484"
+          rotation="180 90 180"
+          material=""
+          geometry=""
+          id="wall-8"
+        ></a-box
+        ><a-box
+          position="0.04082 5.62223 -6.91442"
+          color="#2c1200"
+          scale="0.43464 13.62762 0.44484"
+          rotation="90 90 180"
+          material=""
+          geometry=""
+          id="wall-9"
+        ></a-box
+        ><a-box
+          position="-0.02553 5.62223 7.26544"
+          color="#2c1200"
+          scale="0.43464 13.92888 0.44484"
+          rotation="90 90 180"
+          material=""
+          geometry=""
+          id="wall-14"
+        ></a-box
+        ><a-box
+          position="7.15397 5.63518 0.26947"
+          color="#2c1200"
+          scale="0.43464 14.46243 0.44484"
+          rotation="90 90 90"
+          material=""
+          geometry=""
+          id="wall-10"
+        ></a-box
+        ><a-box
+          position="-6.9705 5.61282 0.30036"
+          color="#2c1200"
+          scale="-0.45097 14.34477 0.45828"
+          rotation="90 90 90"
+          material=""
+          geometry=""
+          id="wall-11"
+        ></a-box
+      ></a-entity>
+
+      <!-- painting -->
+      <a-box
+        position="-4.62494 3.48708 -6.93481"
+        rotation="0 90 0"
+        src="img/pic.jpg"
+        scale="-0.14963 2.36571 3.51655"
+        id="picture"
+        material=""
+        geometry=""
+        rotation="0 90 0"
+      ></a-box>
+
+      <!-- lights -->
+      <a-entity id="lights">
+        <a-entity light="color:white ;type: ambient; intensity:0.85"></a-entity>
+
+        <a-entity
+          id="sp-1"
+          light="color: #fffacd; type: spot; intensity: 0.15"
+          position="0.01651 4.93143 -0.26354"
+          rotation="-90 0 0"
+        ></a-entity>
+
+        <a-entity
+          id="sp-2"
+          light="color: #fffacd; type: spot; intensity: 0.15"
+          position="0.01651 4.93143 0.34902"
+          rotation="-90 0 0"
+        ></a-entity>
+
+        <a-entity
+          id="sp-3"
+          light="color: #fffacd; type: spot; intensity: 0.15"
+          position="-0.4493 4.30451 0.07537"
+          rotation="-90 0 0"
+        ></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
